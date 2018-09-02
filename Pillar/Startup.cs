@@ -30,9 +30,10 @@ namespace Pillar
             var config = builder.Build();
             // получаем строку подключения
             string connectionString = config.GetConnectionString("DefaultConnection");
-            
+
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
-            services.AddMvc().AddJsonOptions(options => {
+            services.AddMvc().AddJsonOptions(options =>
+            {
                 options.SerializerSettings.ReferenceLoopHandling =
                     Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
@@ -55,6 +56,5 @@ namespace Pillar
             app.UseStaticFiles();
             app.UseMvc();
         }
-    }
     }
 }

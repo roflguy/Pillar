@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Pillar.Controllers
 {
-    public class CustomerController
+    public class CustomersController
     {
+
     }
 }

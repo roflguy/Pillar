@@ -19,5 +19,15 @@ namespace TaskApp.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Contact> Contacts { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Contact>()
+                .HasOne(p => p.Customer)
+                .WithMany(t => t.Contacts)
+                .HasForeignKey(p => p.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
+
     }
+    
 }

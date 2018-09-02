@@ -13,6 +13,11 @@ import { SourceModel } from './sourcemodel';
 export class AppComponent implements OnInit {
 
     sourcemodel: SourceModel = new SourceModel();
+    customer: Customer = new Customer();
+    customers: Customer[];
+    del: boolean = false;
+    tableMode: boolean = true;
+    contactCheck: boolean = false;
 
     ngOnInit() { }
 }
